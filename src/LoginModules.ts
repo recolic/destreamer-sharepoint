@@ -12,7 +12,7 @@ export async function doStreamLogin(url: string, tokenCache: TokenCache, usernam
     logger.info('Launching headless Chrome to perform the OpenID Connect dance...');
 
     const browser: puppeteer.Browser = await puppeteer.launch({
-        executablePath: '/usr/bin/microsoft-edge-stable',
+        executablePath: getPuppeteerChromiumPath(),
         headless: false,
         userDataDir: (argv.keepLoginCookies) ? chromeCacheFolder : undefined,
         defaultViewport: null,
@@ -98,7 +98,7 @@ export async function doShareLogin(url: string, username?: string): Promise<Shar
     const hostname = new URL(url).host;
 
     const browser: puppeteer.Browser = await puppeteer.launch({
-        executablePath: '/usr/bin/microsoft-edge-stable',
+        executablePath: getPuppeteerChromiumPath(),
         headless: false,
         devtools: argv.verbose,
         userDataDir: (argv.keepLoginCookies) ? chromeCacheFolder : undefined,

@@ -1,3 +1,6 @@
+# sharepoint branch. Update executablePath in src dir and enjoy
+
+
 <a href="https://github.com/snobu/destreamer/actions">
   <img src="https://github.com/snobu/destreamer/workflows/Node%20CI/badge.svg" alt="CI build status" />
 </a>
