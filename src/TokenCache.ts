@@ -58,7 +58,7 @@ export async function refreshSession(url: string): Promise<StreamSession> {
     const videoId: string = url.split('/').pop() ?? process.exit(ERROR_CODE.INVALID_VIDEO_GUID);
 
     const browser: puppeteer.Browser = await puppeteer.launch({
-        executablePath: getPuppeteerChromiumPath(),
+        executablePath: '/usr/bin/microsoft-edge-stable',
         headless: false,            // NEVER TRUE OR IT DOES NOT WORK
         userDataDir: chromeCacheFolder,
         args: [
